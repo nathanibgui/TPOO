@@ -1,0 +1,11 @@
+FROM elixir:latest
+
+RUN mkdir /app
+COPY . /app
+WORKDIR /app
+
+RUN mix deps.get
+
+RUN chmod +x base_launch.sh
+
+CMD ["sh","base_launch.sh"]
